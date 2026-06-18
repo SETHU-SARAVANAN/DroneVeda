@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
         formStatus.innerHTML = 'Transmitting inquiry protocol...';
         
         const payload = Object.fromEntries(new FormData(contactForm).entries());
-        fetch('http://localhost:3001/send', {
+        fetch('/api/send', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload)
