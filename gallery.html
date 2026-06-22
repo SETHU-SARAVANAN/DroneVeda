@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Gallery — DroneVeda</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .gallery-grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap:16px; }
+    .gallery-item img{ width:100%; height:220px; object-fit:cover; border-radius:10px; box-shadow: 0 6px 18px rgba(0,0,0,0.12);} 
+    .gallery-instructions { max-width:820px; margin: 18px auto; color:var(--text-muted); }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo" style="display:flex; align-items:center; gap:10px;">
+        <img src="WhatsApp Image 2026-06-14 at 5.45.42 PM.jpeg" alt="DroneVeda Logo" style="height:32px; width:auto; display:inline-block;">
+        <span class="logo-text">DRONEVEDA</span>
+      </a>
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link">HOME</a>
+        <a href="workshops.html" class="nav-link">WORKSHOPS</a>
+        <a href="custom-builds.html" class="nav-link">CUSTOM BUILDS</a>
+        <a href="about.html" class="nav-link">ABOUT</a>
+        <a href="gallery.html" class="nav-link active">GALLERY</a>
+      </nav>
+    </div>
+  </header>
+
+  <main style="padding:80px 16px; max-width:1200px; margin:0 auto;">
+    <h1 style="text-align:center; margin-bottom:10px;">Gallery</h1>
+    <p class="gallery-instructions">Add images to <strong>public/gallery/</strong> and name them <code>photo1.jpg</code>, <code>photo2.jpg</code>, ... up to <code>photo30.jpg</code>. The page will automatically detect and display any files present with those names. Supported formats: jpg, jpeg, png, webp.</p>
+
+    <div id="galleryGrid" class="gallery-grid"></div>
+  </main>
+
+  <script>
+    (function(){
+      const grid = document.getElementById('galleryGrid');
+      const formats = ['jpg','jpeg','png','webp'];
+      const max = 30;
+      let found = 0;
+
+      const tryLoad = (url)=>{
+        return new Promise((resolve)=>{
+          const img = new Image();
+          img.onload = () => resolve(img);
+          img.onerror = () => resolve(null);
+          img.src = url;
+        });
+      };
+
+      (async ()=>{
+        for(let i=1;i<=max;i++){
+          for(const ext of formats){
+            const path = `public/gallery/photo${i}.${ext}`;
+            const img = await tryLoad(path);
+            if(img){
+              const el = document.createElement('div'); el.className='gallery-item';
+              img.alt = `Gallery photo ${i}`; el.appendChild(img);
+              grid.appendChild(el);
+              found++;
+              break;
+            }
+          }
+        }
+        if(found===0){
+          grid.innerHTML = '<p style="color:var(--text-muted);">No gallery images found. Upload files to <strong>public/gallery/</strong> named <code>photo1.jpg</code>, <code>photo2.jpg</code> etc.</p>';
+        }
+      })();
+    })();
+  </script>
+</body>
+</html>
