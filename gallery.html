@@ -6,9 +6,15 @@
   <title>Gallery — DroneVeda</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    .gallery-grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap:16px; }
-    .gallery-item img{ width:100%; height:220px; object-fit:cover; border-radius:10px; box-shadow: 0 6px 18px rgba(0,0,0,0.12);} 
+    .gallery-grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(180px,1fr)); gap:16px; align-items:start; }
+    .gallery-item img{ width:100%; display:block; aspect-ratio:4/3; object-fit:cover; border-radius:10px; box-shadow: 0 6px 18px rgba(0,0,0,0.12);} 
     .gallery-instructions { max-width:820px; margin: 18px auto; color:var(--text-muted); }
+
+    /* better touch / mobile sizing */
+    @media (max-width:600px){
+      .gallery-grid { grid-template-columns: repeat(auto-fit,minmax(140px,1fr)); gap:12px; }
+      .gallery-item img{ aspect-ratio:3/2; }
+    }
   </style>
 </head>
 <body>
@@ -38,9 +44,32 @@
   <script>
     (function(){
       const grid = document.getElementById('galleryGrid');
+
+      // Cloudinary images provided by user
+      const cloudUrls = [
+        'https://res.cloudinary.com/dbspky90x/image/upload/v1782283499/WhatsApp_Image_2026-06-22_at_11.21.25_AM_1_axnxdu.jpg',
+        'https://res.cloudinary.com/dbspky90x/image/upload/v1782283499/WhatsApp_Image_2026-06-22_at_11.21.23_AM_dcd30o.jpg',
+        'https://res.cloudinary.com/dbspky90x/image/upload/v1782283498/WhatsApp_Image_2026-06-22_at_11.21.24_AM_tcecqs.jpg',
+        'https://res.cloudinary.com/dbspky90x/image/upload/v1782283499/WhatsApp_Image_2026-06-22_at_10.42.59_AM_zjbdiw.jpg',
+        'https://res.cloudinary.com/dbspky90x/image/upload/v1782283498/WhatsApp_Image_2026-06-22_at_11.32.32_AM_rk9fbm.jpg',
+        'https://res.cloudinary.com/dbspky90x/image/upload/v1782283498/khvyhvy_arx7td.jpg',
+        'https://res.cloudinary.com/dbspky90x/image/upload/v1782283497/WhatsApp_Image_2026-06-22_at_11.21.25_AM_vmkz38.jpg',
+        'https://res.cloudinary.com/dbspky90x/image/upload/v1782283497/WhatsApp_Image_2026-06-22_at_11.32.43_AM_pddmyo.jpg'
+      ];
+
+      // Insert cloud images first
+      cloudUrls.forEach((u,i)=>{
+        const wrap = document.createElement('div'); wrap.className='gallery-item';
+        const img = document.createElement('img');
+        img.src = u;
+        img.alt = `Cloud photo ${i+1}`;
+        wrap.appendChild(img);
+        grid.appendChild(wrap);
+      });
+
+      // Then try local fallback images (photo1..photo30)
       const formats = ['jpg','jpeg','png','webp'];
       const max = 30;
-      let found = 0;
 
       const tryLoad = (url)=>{
         return new Promise((resolve)=>{
@@ -52,6 +81,7 @@
       };
 
       (async ()=>{
+        let foundLocal = 0;
         for(let i=1;i<=max;i++){
           for(const ext of formats){
             const path = `public/gallery/photo${i}.${ext}`;
@@ -60,13 +90,13 @@
               const el = document.createElement('div'); el.className='gallery-item';
               img.alt = `Gallery photo ${i}`; el.appendChild(img);
               grid.appendChild(el);
-              found++;
+              foundLocal++;
               break;
             }
           }
         }
-        if(found===0){
-          grid.innerHTML = '<p style="color:var(--text-muted);">No gallery images found. Upload files to <strong>public/gallery/</strong> named <code>photo1.jpg</code>, <code>photo2.jpg</code> etc.</p>';
+        if(cloudUrls.length===0 && foundLocal===0){
+          grid.innerHTML = '<p style="color:var(--text-muted);">No gallery images found. Upload files to <strong>public/gallery/</strong> named <code>photo1.jpg</code>, <code>photo2.jpg</code> etc., or provide image URLs.</p>';
         }
       })();
     })();
