@@ -1,4 +1,4 @@
-# DroneVeda
+# Drone Veda
 
 > **Intelligence in Every Flight.**
 > 
@@ -6,7 +6,7 @@
 
 ## Overview
 
-**DroneVeda** operates at the intersection of advanced aerial robotics and aerospace education. We engineer end-to-end bespoke UAV systems for specialized industries, ranging from heavy-lift agricultural sprayers to LiDAR-equipped industrial mapping drones. Beyond manufacturing, DroneVeda is dedicated to shaping the next generation of engineers through structured, hands-on drone building and programming workshops.
+**Drone Veda** operates at the intersection of advanced aerial robotics and aerospace education. We engineer end-to-end bespoke UAV systems for specialized industries, ranging from heavy-lift agricultural sprayers to LiDAR-equipped industrial mapping drones. Beyond manufacturing, Drone Veda is dedicated to shaping the next generation of engineers through structured, hands-on drone building and programming workshops.
 
 ## Key Divisions
 
@@ -31,7 +31,7 @@ End-to-end design and manufacturing of bespoke UAV systems:
 
 ## Technology Stack
 
-The DroneVeda landing page and portfolio are built using a clean, modern, and lightweight stack focusing on performance, responsive design, and cutting-edge aesthetics:
+The Drone Veda landing page and portfolio are built using a clean, modern, and lightweight stack focusing on performance, responsive design, and cutting-edge aesthetics:
 * **HTML5**: Semantic and accessible document structure.
 * **CSS3**: Custom variables, CSS Grid/Flexbox layouts, dark-themed UI components, and smooth scroll-reveal animations.
 * **Vanilla JavaScript**: Lightweight interactions, responsive mobile navigation toggle, and intersection observers for scroll animations.
