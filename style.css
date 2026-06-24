@@ -463,6 +463,31 @@ a {
   }
 }
 
+/* Mobile hero adjustment: keep heading visible and avoid it being pushed too far down */
+@media (max-width: 600px) {
+  .hero-section {
+    align-items: center; /* center vertically instead of bottom */
+    padding-bottom: 6%;
+    height: 90vh; /* slightly reduce full-viewport height to keep content visible with navbar */
+  }
+
+  .hero-title {
+    font-size: clamp(2.2rem, 8vw, 3.2rem);
+    margin-bottom: 8px;
+  }
+
+  .hero-badge {
+    font-size: 1.1rem;
+    margin-bottom: 16px;
+  }
+
+  .hero-subtitle {
+    max-width: 100%;
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+  }
+}
+
 /* SpaceX-style Scroll Down Indicator */
 .scroll-down-arrow {
   position: absolute;
