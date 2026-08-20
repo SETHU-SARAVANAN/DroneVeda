@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Drone Veda - Commercial UAV systems, custom industrial drones, autonomous agriculture, and institutional robotics training.">
+  <title>DRONE VEDA | Intelligence in every flight.</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo">
+        <span class="logo-text">DRONE VEDA</span>
+      </a>
+
+      <button class="mobile-toggle" aria-label="Toggle Menu" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <nav class="nav-menu">
+        <a href="../index.html" class="nav-link">HOME</a>
+        <a href="workshops.html" class="nav-link">WORKSHOPS</a>
+        <a href="products.html" class="nav-link">PRODUCTS</a>
+        <a href="gallery.html" class="nav-link active">GALLERY</a>
+        <a href="about.html" class="nav-link">ABOUT</a>
+        <a href="../index.html#contact" class="btn">REQUEST QUOTE</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="noise-overlay"></div>
+
+  <main style="position: relative; overflow-x: clip;">
+    <div>
+
+      <section id="gallery" class="section" style="padding-top: 180px; padding-bottom: 180px; min-height: 60vh;">
+        <div class="reveal"
+          style="position: absolute; top: 30%; left: -5%; font-size: 15rem; font-family: var(--font-serif); font-weight: 700; color: rgba(255,255,255,0.02); z-index: 0; white-space: nowrap; pointer-events: none;">
+          SHOWCASE</div>
+
+        <div class="gallery-carousel reveal glass-card"
+          style="position: relative; max-width: 900px; margin: 0 auto; overflow: hidden; border-radius: 12px; aspect-ratio: 16/9; padding: 0;">
+          <div class="carousel-track" id="carouselTrack"
+            style="display: flex; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); height: 100%; transform: translateX(-100%);">
+            <img src="../assets/img/gallery/5.jpeg" style="min-width: 100%; object-fit: cover; height: 100%;"
+              alt="Clone 5" onerror="this.onerror=null; this.src='../assets/img/logo.png'; this.style.opacity='0.2';">
+            <img src="../assets/img/gallery/1.jpeg" style="min-width: 100%; object-fit: cover; height: 100%;"
+              alt="Gallery Image 1"
+              onerror="this.onerror=null; this.src='../assets/img/logo.png'; this.style.opacity='0.2';">
+            <img src="../assets/img/gallery/2.jpeg" style="min-width: 100%; object-fit: cover; height: 100%;"
+              alt="Gallery Image 2"
+              onerror="this.onerror=null; this.src='../assets/img/logo.png'; this.style.opacity='0.2';">
+            <img src="../assets/img/gallery/3.jpeg" style="min-width: 100%; object-fit: cover; height: 100%;"
+              alt="Gallery Image 3"
+              onerror="this.onerror=null; this.src='../assets/img/logo.png'; this.style.opacity='0.2';">
+            <img src="../assets/img/gallery/4.jpeg" style="min-width: 100%; object-fit: cover; height: 100%;"
+              alt="Gallery Image 4"
+              onerror="this.onerror=null; this.src='../assets/img/logo.png'; this.style.opacity='0.2';">
+            <img src="../assets/img/gallery/5.jpeg" style="min-width: 100%; object-fit: cover; height: 100%;"
+              alt="Gallery Image 5"
+              onerror="this.onerror=null; this.src='../assets/img/logo.png'; this.style.opacity='0.2';">
+            <img src="../assets/img/gallery/1.jpeg" style="min-width: 100%; object-fit: cover; height: 100%;"
+              alt="Clone 1" onerror="this.onerror=null; this.src='../assets/img/logo.png'; this.style.opacity='0.2';">
+          </div>
+
+          <button class="carousel-btn prev" onclick="moveCarousel(-1)"
+            style="position: absolute; top: 50%; left: 20px; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: 1px solid rgba(255,255,255,0.2); padding: 15px; cursor: pointer; border-radius: 50%; z-index: 10; transition: background 0.3s; font-size: 1.2rem;">&#10094;</button>
+          <button class="carousel-btn next" onclick="moveCarousel(1)"
+            style="position: absolute; top: 50%; right: 20px; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: 1px solid rgba(255,255,255,0.2); padding: 15px; cursor: pointer; border-radius: 50%; z-index: 10; transition: background 0.3s; font-size: 1.2rem;">&#10095;</button>
+
+          <div class="carousel-dots"
+            style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; gap: 12px; z-index: 10;">
+            <span class="dot active" onclick="setCarousel(0)"
+              style="width: 10px; height: 10px; border-radius: 50%; background: white; cursor: pointer; opacity: 1; transition: 0.3s; box-shadow: 0 2px 4px rgba(0,0,0,0.5);"></span>
+            <span class="dot" onclick="setCarousel(1)"
+              style="width: 10px; height: 10px; border-radius: 50%; background: white; cursor: pointer; opacity: 0.5; transition: 0.3s; box-shadow: 0 2px 4px rgba(0,0,0,0.5);"></span>
+            <span class="dot" onclick="setCarousel(2)"
+              style="width: 10px; height: 10px; border-radius: 50%; background: white; cursor: pointer; opacity: 0.5; transition: 0.3s; box-shadow: 0 2px 4px rgba(0,0,0,0.5);"></span>
+            <span class="dot" onclick="setCarousel(3)"
+              style="width: 10px; height: 10px; border-radius: 50%; background: white; cursor: pointer; opacity: 0.5; transition: 0.3s; box-shadow: 0 2px 4px rgba(0,0,0,0.5);"></span>
+            <span class="dot" onclick="setCarousel(4)"
+              style="width: 10px; height: 10px; border-radius: 50%; background: white; cursor: pointer; opacity: 0.5; transition: 0.3s; box-shadow: 0 2px 4px rgba(0,0,0,0.5);"></span>
+          </div>
+        </div>
+
+        <div class="carousel-thumbnails reveal"
+          style="display: flex; justify-content: center; gap: 10px; margin: 20px auto 0; max-width: 900px;">
+          <img src="../assets/img/gallery/1.jpeg" onclick="setCarousel(0)"
+            style="width: 70px; height: 50px; object-fit: cover; cursor: pointer; border-radius: 6px; border: 2px solid var(--logo-green); transition: 0.3s;"
+            class="thumb" onerror="this.onerror=null; this.src='../assets/img/logo.png';">
+          <img src="../assets/img/gallery/2.jpeg" onclick="setCarousel(1)"
+            style="width: 70px; height: 50px; object-fit: cover; cursor: pointer; border-radius: 6px; border: 2px solid transparent; opacity: 0.6; transition: 0.3s;"
+            class="thumb" onerror="this.onerror=null; this.src='../assets/img/logo.png';">
+          <img src="../assets/img/gallery/3.jpeg" onclick="setCarousel(2)"
+            style="width: 70px; height: 50px; object-fit: cover; cursor: pointer; border-radius: 6px; border: 2px solid transparent; opacity: 0.6; transition: 0.3s;"
+            class="thumb" onerror="this.onerror=null; this.src='../assets/img/logo.png';">
+          <img src="../assets/img/gallery/4.jpeg" onclick="setCarousel(3)"
+            style="width: 70px; height: 50px; object-fit: cover; cursor: pointer; border-radius: 6px; border: 2px solid transparent; opacity: 0.6; transition: 0.3s;"
+            class="thumb" onerror="this.onerror=null; this.src='../assets/img/logo.png';">
+          <img src="../assets/img/gallery/5.jpeg" onclick="setCarousel(4)"
+            style="width: 70px; height: 50px; object-fit: cover; cursor: pointer; border-radius: 6px; border: 2px solid transparent; opacity: 0.6; transition: 0.3s;"
+            class="thumb" onerror="this.onerror=null; this.src='../assets/img/logo.png';">
+        </div>
+
+        <script>
+          let currentSlide = 0; // 0 to 4
+          let isTransitioning = false;
+          const track = document.getElementById('carouselTrack');
+          const totalSlides = 5;
+          let dots = [];
+          let thumbs = [];
+
+          document.addEventListener("DOMContentLoaded", () => {
+            dots = document.querySelectorAll('.dot');
+            thumbs = document.querySelectorAll('.thumb');
+            track.style.transform = `translateX(-100%)`;
+          });
+
+          let autoPlay = setInterval(() => moveCarousel(1), 5000);
+
+          function updateActiveStates() {
+            const realIndex = (currentSlide % totalSlides + totalSlides) % totalSlides;
+            if (dots.length > 0) {
+              dots.forEach((dot, i) => {
+                dot.style.opacity = i === realIndex ? '1' : '0.5';
+                dot.style.transform = i === realIndex ? 'scale(1.2)' : 'scale(1)';
+              });
+            }
+            if (thumbs.length > 0) {
+              thumbs.forEach((thumb, i) => {
+                thumb.style.borderColor = i === realIndex ? 'var(--logo-green)' : 'transparent';
+                thumb.style.opacity = i === realIndex ? '1' : '0.6';
+              });
+            }
+          }
+
+          function moveCarousel(dir) {
+            if (isTransitioning) return;
+            isTransitioning = true;
+            currentSlide += dir;
+
+            track.style.transition = 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+            track.style.transform = `translateX(-${(currentSlide + 1) * 100}%)`;
+
+            updateActiveStates();
+            resetAutoPlay();
+          }
+
+          function setCarousel(index) {
+            if (isTransitioning || currentSlide === index) return;
+            isTransitioning = true;
+            currentSlide = index;
+
+            track.style.transition = 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+            track.style.transform = `translateX(-${(currentSlide + 1) * 100}%)`;
+
+            updateActiveStates();
+            resetAutoPlay();
+          }
+
+          track.addEventListener('transitionend', () => {
+            isTransitioning = false;
+            if (currentSlide <= -1) {
+              track.style.transition = 'none';
+              currentSlide = totalSlides - 1;
+              track.style.transform = `translateX(-${(currentSlide + 1) * 100}%)`;
+            } else if (currentSlide >= totalSlides) {
+              track.style.transition = 'none';
+              currentSlide = 0;
+              track.style.transform = `translateX(-${(currentSlide + 1) * 100}%)`;
+            }
+          });
+
+          function resetAutoPlay() {
+            clearInterval(autoPlay);
+            autoPlay = setInterval(() => moveCarousel(1), 5000);
+          }
+        </script>
+    </div>
+    </section>
+    <div class="page-navigation"
+      style="display: flex; justify-content: space-between; max-width: 1200px; margin: 0 auto; padding: 40px 20px;">
+      <a href="products.html" class="btn" style="background: transparent; border: 1px solid var(--border-color);">&larr;
+        PREV: CUSTOM BUILDS</a>
+      <a href="about.html" class="btn" style="background: transparent; border: 1px solid var(--border-color);">NEXT:
+        ABOUT &rarr;</a>
+    </div>
+
+    <footer class="modern-footer">
+      <div class="footer-top container">
+        <div class="footer-brand" style="display: flex; flex-direction: column; gap: 10px;">
+          <h1 class="huge-footer-text" style="font-size: 8vw; margin-bottom: 0; margin-top: -10px;">DRONE VEDA</h1>
+          <div class="footer-tagline-huge">
+            Intelligence in every flight
+          </div>
+        </div>
+        <div class="footer-links-grid">
+          <div class="footer-column">
+            <h4 class="footer-col-title">Navigation</h4>
+            <a href="../index.html" class="footer-link">Home</a>
+            <a href="workshops.html" class="footer-link">Workshops</a>
+            <a href="products.html" class="footer-link">Products</a>
+            <a href="gallery.html" class="footer-link">Gallery</a>
+            <a href="about.html" class="footer-link">About</a>
+          </div>
+                      <div class="footer-column">
+              <h4 class="footer-col-title">Services</h4>
+              <a href="products.html" class="footer-link">Custom Builds</a>
+              <a href="products.html" class="footer-link">Drone Kits</a>
+              <a href="workshops.html" class="footer-link">Training</a>
+            </div>
+        </div>
+      </div>
+
+
+
+      <div class="footer-bottom-bar container">
+        <div style="display: flex; flex-direction: column; gap: 4px;">
+            <a href="../index.html" class="footer-logo-small">
+          <img src="../assets/img/logo-footer.png" alt="Drone Veda" style="height: 64px;">
+        </a>
+            <span style="font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono);">CIN: U71100MR2026OPC476801</span>
+          </div>
+        <div class="footer-legal-links">
+          <a href="about.html" class="footer-link-small">About Drone Veda</a>
+          <a href="privacy.html" class="footer-link-small">Privacy</a>
+          <a href="terms.html" class="footer-link-small">Terms</a>
+          <a href="../index.html#contact" class="footer-link-small">Contact</a>
+        </div>
+      </div>
+    </footer>
+    </div>
+  </main>
+
+  <script src="../assets/js/script.js"></script>
+</body>
+
+</html>
